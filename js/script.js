@@ -75,17 +75,6 @@ $('document').ready(function () {
 
     $('.left_nav_container, .right_nav_container').click(function (e) {
 
-
-        if (window.getSelection) {
-            if (window.getSelection().empty) {  // Chrome
-                window.getSelection().empty();
-            } else if (window.getSelection().removeAllRanges) {  // Firefox
-                window.getSelection().removeAllRanges();
-            }
-        } else if (document.selection) {  // IE?
-            document.selection.empty();
-        }
-
         if ($(e.target).is('.fa-angle-left')) {
             $('.main_container [class*=spnr_container]').stop().fadeOut(150).promise().done(
                 function tt () {
@@ -133,18 +122,6 @@ $('document').ready(function () {
         if (mc === bg_massive.length) {
             mc = 0;
         }
-
-
-        if (window.getSelection) {
-            if (window.getSelection().empty) {  // Chrome
-                window.getSelection().empty();
-            } else if (window.getSelection().removeAllRanges) {  // Firefox
-                window.getSelection().removeAllRanges();
-            }
-        } else if (document.selection) {  // IE?
-            document.selection.empty();
-        }
-
     });
 
 
