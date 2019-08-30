@@ -23,7 +23,6 @@ $('document').ready(function () {
     let nc = 4;
 
 
-
     // ======================spinner rotation======================
 
     $.fn.rotate = function (degrees) {
@@ -157,6 +156,8 @@ $('document').ready(function () {
             }
         }
     }, 500)
+
+
 
 
 });
