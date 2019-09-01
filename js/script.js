@@ -21,6 +21,7 @@ $('document').ready(function () {
         'linear-gradient(-105deg, #00bf8f, #001510)'];
     let mc = 1;
     let nc = 4;
+    let d1c = 0;
 
 
 
@@ -145,7 +146,6 @@ $('document').ready(function () {
 
         if (cc === 3) {
             rotation_clover += 90;
-            console.log('rotate.event');
             $('.clover_spinner').rotate(rotation_clover);
             cc = 0
         } else {
@@ -156,9 +156,39 @@ $('document').ready(function () {
                 cn = 0;
             }
         }
-    }, 500)
+    }, 500);
 
 
+    // ======================domino spinner======================
+
+    $.fn.domino = function (hgt1, hgt2, easing, length) {
+
+        $(this).css('backgroundColor', 'rgba(255,255,255,0.2)')
+            .stop().animate({height:hgt1},easing);
+
+        $(this).eq(length).css('backgroundColor', 'rgba(255,255,255,0.7)')
+            .stop().animate({height:hgt2},easing)
+
+    };
+
+    let domino_1_interval = setInterval(function () {
+
+        let hgt1 = 20 + '%';
+        let hgt2 = 30 + '%';
+
+        let dc = $('.domino_1').length;
+
+        $('.domino_1').domino(hgt1, hgt2, 250, d1c);
+
+        d1c++;
+
+        if (d1c === dc) {
+            d1c = 0
+        }
+
+        console.log('domino.event ' + d1c);
+
+    },250)
 
 
 });
