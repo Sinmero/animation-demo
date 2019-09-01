@@ -3,6 +3,7 @@ $('document').ready(function () {
     let rotation_leaf = 0;
     let spinner_length = $('.main_container [class*=spnr_container]').length;
     let n = 0;
+    let nsel;
     let c = 4;
     let cn = 1;
     let rotation_clover = 0;
@@ -20,8 +21,11 @@ $('document').ready(function () {
         'linear-gradient(-105deg, #ffd452, #544a7d)',
         'linear-gradient(-105deg, #00bf8f, #001510)'];
     let mc = 1;
-    let nc = 4;
+    let nc = 8;
     let d1c = 0;
+    let c1c =0;
+    let clock_rotation = 0;
+    let oe = 0;
 
 
 
@@ -65,23 +69,27 @@ $('document').ready(function () {
             $('.main_container [class*=spnr_container]').eq(n).stop().fadeIn(1500);
             n++;
             console.log(i);
-            if (n >= spinner_length) {
+            if (n >= spinner_length && nc !== 2) {
+                nsel = Math.ceil(n/4)*4;
                 n = 0;
                 return(e)
-            }
+            } else if (n >= spinner_length && nc === 2) {
+                nsel = n;
+                n = 0;
+            } else {nsel = n}
         }
 
     }
-
 
     $('.left_nav_container, .right_nav_container').click(function (e) {
 
         if ($(e.target).is('.fa-angle-left')) {
             $('.main_container [class*=spnr_container]').stop().fadeOut(150).promise().done(
-                function tt () {
+                function () {
+                    n = nsel;
                     n -= nc;
                     if (n < 0) {n = 0}
-                    load_spinners()
+                    load_spinners_w_fadeout();
                 }
             );
 
@@ -102,16 +110,16 @@ $('document').ready(function () {
             nc = 2
         } else {
             $(this).attr('id', 'multi');
-            nc = 4
+            nc = 8
         }
 
         if (c === 4) {
-            n = 0;
+            n = Math.floor(nsel/4 - 1)*4;
             c = 1;
             load_spinners_w_fadeout()
         } else {
             c = 4;
-            n = 0;
+            n = Math.floor(nsel/4)*4;
             load_spinners_w_fadeout()
         }
 
@@ -159,7 +167,7 @@ $('document').ready(function () {
     }, 500);
 
 
-    // ======================domino spinner======================
+    // ======================domino spinner 1======================
 
     $.fn.domino = function (hgt1, hgt2, easing, length) {
 
@@ -167,7 +175,7 @@ $('document').ready(function () {
             .stop().animate({height:hgt1},easing);
 
         $(this).eq(length).css('backgroundColor', 'rgba(255,255,255,0.7)')
-            .stop().animate({height:hgt2},easing)
+            .stop().animate({height:hgt2},easing);
 
     };
 
@@ -178,7 +186,7 @@ $('document').ready(function () {
 
         let dc = $('.domino_1').length;
 
-        $('.domino_1').domino(hgt1, hgt2, 250, d1c);
+        $('.domino_1').domino(hgt1, hgt2, 200, d1c);
 
         d1c++;
 
@@ -186,7 +194,68 @@ $('document').ready(function () {
             d1c = 0
         }
 
-        console.log('domino.event ' + d1c);
+    },200);
+
+    // ======================clock spinner 1======================
+
+    // $.fn.animateRotate = function(angle, duration, easing, complete) {
+    //     var args = $.speed(duration, easing, complete);
+    //     var step = args.step;
+    //     return this.each(function(i, e) {
+    //         args.complete = $.proxy(args.complete, e);
+    //         args.step = function(now) {
+    //             $.style(e, 'transform', 'rotate(' + now + 'deg)');
+    //             if (step) return step.apply(e, arguments);
+    //         };
+    //
+    //         $({deg: 0}).animate({deg: angle}, args);
+    //     });
+    // };
+
+
+    let ch;
+
+    $.fn.spinner_rotate = function (length, eq, angle) {
+
+        // let angle = eq*(360/length);
+        // let angle_2 = 360;
+
+        // $(this).eq(eq).stop().animate({deg: angle}, 500).animate({deg: angle_2},500)
+
+        // $(this).eq(eq).animateRotate(angle, 500);
+        // $(this).eq(eq).animateRotate(angle_2, 500)
+
+        $(this).eq(eq).css({'transform' : 'rotate('+ angle +'deg)'});
+
+        return $(this)
+
+    };
+
+
+
+
+    let clock_spinner_inteval = setInterval(function () {
+
+        let cc = $('.dot_1').length;
+        let angle = 360/cc;
+        if (oe % 2 === 0) {
+            clock_rotation = clock_rotation + angle
+        } else if (oe % 2 !== 0) {
+            clock_rotation = Math.ceil(clock_rotation/360)*360
+        }
+
+        console.log(angle + ' ' + clock_rotation);
+
+        $('.dot_1').spinner_rotate(cc, c1c, clock_rotation);
+
+        c1c++;
+
+        console.log(c1c);
+
+        if (c1c === cc) {
+            c1c = 0;
+            oe++
+        }
 
     },250)
 
