@@ -215,7 +215,7 @@ $('document').ready(function () {
 
     let ch;
 
-    $.fn.spinner_rotate = function (length, eq, angle) {
+    $.fn.spinner_rotate = function (eq, angle) {
 
         // let angle = eq*(360/length);
         // let angle_2 = 360;
@@ -244,20 +244,55 @@ $('document').ready(function () {
             clock_rotation = Math.ceil(clock_rotation/360)*360
         }
 
-        console.log(angle + ' ' + clock_rotation);
 
-        $('.dot_1').spinner_rotate(cc, c1c, clock_rotation);
+        $('.dot_1').spinner_rotate(c1c, clock_rotation);
 
         c1c++;
-
-        console.log(c1c);
 
         if (c1c === cc) {
             c1c = 0;
             oe++
         }
 
-    },250)
+    },250);
+
+
+    // ======================cube spinner======================
+
+    let cbc = 0;
+    let cbpr = 1;
+    let cmassive = [0, 1, 3, 2];
+
+    function cube_animation() {
+
+        $('.cube').css('backgroundColor', 'rgba(255, 255, 255, 0.2)');
+
+        $('.cube').eq(cmassive[cbc]).css('backgroundColor', 'rgba(255, 255, 255, 0.7)');
+
+
+        if (cbpr % 2 === 0) {
+
+            $('.cube').eq(cmassive[cbc]).css('borderRadius', '100px');
+
+            cbc++;
+        } else {
+            $('.cube').css('borderRadius', '0');
+        }
+    }
+
+    let cube_spinner_interval = setInterval(function () {
+
+        let cc = $('.cube').length;
+
+        cube_animation();
+
+        cbpr++;
+
+        if (cbc === cc) {
+            cbc = 0;
+        }
+
+    },500)
 
 
 });
