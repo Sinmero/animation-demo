@@ -351,6 +351,165 @@ body, html {
     .cube_container .cube:nth-child(1), .cube_container .cube:nth-child(2) {
       margin-top: 0; }
 
+/*=============== Spinner 11 ===============*/
+.clock_container_2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
+  .clock_container_2 .dot_2 {
+    position: absolute;
+    width: 2%;
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform-origin: 50% 75px;
+    border-radius: 50px;
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -ms-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s; }
+    .clock_container_2 .dot_2:nth-child(2n) {
+      height: 14%; }
+    .clock_container_2 .dot_2:nth-child(1) {
+      -webkit-transform: rotate(15deg);
+      -moz-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+      -o-transform: rotate(15deg);
+      transform: rotate(15deg); }
+    .clock_container_2 .dot_2:nth-child(2) {
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      transform: rotate(30deg); }
+    .clock_container_2 .dot_2:nth-child(3) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .clock_container_2 .dot_2:nth-child(4) {
+      -webkit-transform: rotate(60deg);
+      -moz-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+      -o-transform: rotate(60deg);
+      transform: rotate(60deg); }
+    .clock_container_2 .dot_2:nth-child(5) {
+      -webkit-transform: rotate(75deg);
+      -moz-transform: rotate(75deg);
+      -ms-transform: rotate(75deg);
+      -o-transform: rotate(75deg);
+      transform: rotate(75deg); }
+    .clock_container_2 .dot_2:nth-child(6) {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
+    .clock_container_2 .dot_2:nth-child(7) {
+      -webkit-transform: rotate(105deg);
+      -moz-transform: rotate(105deg);
+      -ms-transform: rotate(105deg);
+      -o-transform: rotate(105deg);
+      transform: rotate(105deg); }
+    .clock_container_2 .dot_2:nth-child(8) {
+      -webkit-transform: rotate(120deg);
+      -moz-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+      -o-transform: rotate(120deg);
+      transform: rotate(120deg); }
+    .clock_container_2 .dot_2:nth-child(9) {
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg); }
+    .clock_container_2 .dot_2:nth-child(10) {
+      -webkit-transform: rotate(150deg);
+      -moz-transform: rotate(150deg);
+      -ms-transform: rotate(150deg);
+      -o-transform: rotate(150deg);
+      transform: rotate(150deg); }
+    .clock_container_2 .dot_2:nth-child(11) {
+      -webkit-transform: rotate(165deg);
+      -moz-transform: rotate(165deg);
+      -ms-transform: rotate(165deg);
+      -o-transform: rotate(165deg);
+      transform: rotate(165deg); }
+    .clock_container_2 .dot_2:nth-child(12) {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
+    .clock_container_2 .dot_2:nth-child(13) {
+      -webkit-transform: rotate(195deg);
+      -moz-transform: rotate(195deg);
+      -ms-transform: rotate(195deg);
+      -o-transform: rotate(195deg);
+      transform: rotate(195deg); }
+    .clock_container_2 .dot_2:nth-child(14) {
+      -webkit-transform: rotate(210deg);
+      -moz-transform: rotate(210deg);
+      -ms-transform: rotate(210deg);
+      -o-transform: rotate(210deg);
+      transform: rotate(210deg); }
+    .clock_container_2 .dot_2:nth-child(15) {
+      -webkit-transform: rotate(225deg);
+      -moz-transform: rotate(225deg);
+      -ms-transform: rotate(225deg);
+      -o-transform: rotate(225deg);
+      transform: rotate(225deg); }
+    .clock_container_2 .dot_2:nth-child(16) {
+      -webkit-transform: rotate(240deg);
+      -moz-transform: rotate(240deg);
+      -ms-transform: rotate(240deg);
+      -o-transform: rotate(240deg);
+      transform: rotate(240deg); }
+    .clock_container_2 .dot_2:nth-child(17) {
+      -webkit-transform: rotate(255deg);
+      -moz-transform: rotate(255deg);
+      -ms-transform: rotate(255deg);
+      -o-transform: rotate(255deg);
+      transform: rotate(255deg); }
+    .clock_container_2 .dot_2:nth-child(18) {
+      -webkit-transform: rotate(270deg);
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      transform: rotate(270deg); }
+    .clock_container_2 .dot_2:nth-child(19) {
+      -webkit-transform: rotate(285deg);
+      -moz-transform: rotate(285deg);
+      -ms-transform: rotate(285deg);
+      -o-transform: rotate(285deg);
+      transform: rotate(285deg); }
+    .clock_container_2 .dot_2:nth-child(20) {
+      -webkit-transform: rotate(300deg);
+      -moz-transform: rotate(300deg);
+      -ms-transform: rotate(300deg);
+      -o-transform: rotate(300deg);
+      transform: rotate(300deg); }
+    .clock_container_2 .dot_2:nth-child(21) {
+      -webkit-transform: rotate(315deg);
+      -moz-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+      -o-transform: rotate(315deg);
+      transform: rotate(315deg); }
+    .clock_container_2 .dot_2:nth-child(22) {
+      -webkit-transform: rotate(330deg);
+      -moz-transform: rotate(330deg);
+      -ms-transform: rotate(330deg);
+      -o-transform: rotate(330deg);
+      transform: rotate(330deg); }
+    .clock_container_2 .dot_2:nth-child(23) {
+      -webkit-transform: rotate(345deg);
+      -moz-transform: rotate(345deg);
+      -ms-transform: rotate(345deg);
+      -o-transform: rotate(345deg);
+      transform: rotate(345deg); }
+
 @media only screen and (max-width: 1200px) {
   [class*='spnr_container'] {
     margin: 20% 15% 20% 15%;
@@ -376,4 +535,7 @@ body, html {
     height: 20px; }
 
   .clock_container_1 .dot_1 {
+    transform-origin: 50% 50px; }
+
+  .clock_container_2 .dot_2 {
     transform-origin: 50% 50px; } }

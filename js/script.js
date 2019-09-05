@@ -292,7 +292,47 @@ $('document').ready(function () {
             cbc = 0;
         }
 
-    },500)
+    },500);
+
+    // ======================clock spinner 2======================
+    
+    let cs2 = $('.dot_2').length;
+    let cc2 = 0;
+    let cc2l = -1;
+    $.fn.clock_spinner_2_animation = function (length, wdt, length2) {
+        
+        $(this).css('padding', '0 0 0 0').css('backgroundColor', 'rgba(255, 255, 255, 0.2)');
+        $(this).eq(length).css('padding', '0 '+ wdt +'px 55% '+ wdt + 'px').css('backgroundColor', 'rgba(255, 255, 255, 0.7)');
+        $(this).eq(length2).css('padding', '0 '+ wdt +'px 55% '+ wdt + 'px').css('backgroundColor', 'rgba(255, 255, 255, 0.7)');
+    };
+
+    let clock_spinner_interval = setInterval(function () {
+        
+        $('.dot_2').clock_spinner_2_animation(cc2, 2, cc2l);
+        if ((cc2+1)/cs2 === 1) {
+            cc2l++;
+            if (cc2l === cc2) {
+                cc2l = -1
+            }
+        }
+        cc2++;
+        if (cc2 === cs2) {
+            cc2 = 0
+        }
+    },50);
+
+    let shc = 0;
+
+    let clock_2_shadow_animation = setInterval(function () {
+
+        if (shc % 2 === 0) {
+            $('.dot_2').css('boxShadow', '0 0 10px 5px rgba(255, 255, 255, 0.05)')
+        } else {
+            $('.dot_2').css('boxShadow', '0 0 10px 5px rgba(255, 255, 255, 0.0)')
+        }
+        shc++
+
+    },1200)
 
 
 });
