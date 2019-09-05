@@ -357,18 +357,25 @@ body, html {
   justify-content: center;
   width: 100%;
   height: 100%; }
+  .clock_container_2 .shadow_dot {
+    align-self: center;
+    justify-self: center;
+    width: 85%;
+    height: 85%;
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -ms-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    border-radius: 100%;
+    border: solid 10px rgba(255, 255, 255, 0); }
   .clock_container_2 .dot_2 {
     position: absolute;
     width: 2%;
     height: 10%;
     background-color: rgba(255, 255, 255, 0.2);
     transform-origin: 50% 75px;
-    border-radius: 50px;
-    -webkit-transition: box-shadow 0.3s;
-    -moz-transition: box-shadow 0.3s;
-    -ms-transition: box-shadow 0.3s;
-    -o-transition: box-shadow 0.3s;
-    transition: box-shadow 0.3s; }
+    border-radius: 50px; }
     .clock_container_2 .dot_2:nth-child(2n) {
       height: 14%; }
     .clock_container_2 .dot_2:nth-child(1) {

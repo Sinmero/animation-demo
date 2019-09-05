@@ -326,9 +326,9 @@ $('document').ready(function () {
     let clock_2_shadow_animation = setInterval(function () {
 
         if (shc % 2 === 0) {
-            $('.dot_2').css('boxShadow', '0 0 10px 5px rgba(255, 255, 255, 0.05)')
+            $('.shadow_dot').css('boxShadow', '0 0 0 10px rgba(255, 255, 255, 0.05)');
         } else {
-            $('.dot_2').css('boxShadow', '0 0 10px 5px rgba(255, 255, 255, 0.0)')
+            $('.shadow_dot').css('boxShadow', '0 0 0 10px rgba(255, 255, 255, 0.0)');
         }
         shc++
 
