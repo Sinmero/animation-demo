@@ -332,7 +332,15 @@ $('document').ready(function () {
         }
         shc++
 
-    },1200)
+    },1200);
 
+    // ======================circle dot spinner======================
+
+    let circle_sipnner_deg = 0;
+
+    let circle_dot_spinner_animation = setInterval (function x() {
+        circle_sipnner_deg += 360;
+        $('.circle_dot_outside').rotate(circle_sipnner_deg);
+    }, 3200);
 
 });
