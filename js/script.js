@@ -338,9 +338,15 @@ $('document').ready(function () {
 
     let circle_sipnner_deg = 0;
 
-    let circle_dot_spinner_animation = setInterval (function x() {
+    function c_anim() {
         circle_sipnner_deg += 360;
         $('.circle_dot_outside').rotate(circle_sipnner_deg);
-    }, 2200);
+    }
+
+    c_anim();
+
+    let circle_dot_spinner_animation = setInterval (c_anim, 2200);
+
+
 
 });
