@@ -341,6 +341,6 @@ $('document').ready(function () {
     let circle_dot_spinner_animation = setInterval (function x() {
         circle_sipnner_deg += 360;
         $('.circle_dot_outside').rotate(circle_sipnner_deg);
-    }, 3200);
+    }, 2200);
 
 });
