@@ -54,17 +54,18 @@ $('document').ready(function () {
     // ======================spinner loading======================
 
 
-    load_spinners();
+    load_spinners_w_fadeout();
 
     function load_spinners_w_fadeout() {
-        $('.main_container [class*=spnr_container]').stop().fadeOut(150).promise().done(
-            function () {
-                isAnimating = true;
-                setTimeout(function () {
-                    isAnimating = false;
-                }, 500);
-                load_spinners();
-            });
+        isAnimating = true;
+        setTimeout(function () {
+            isAnimating = false;
+        }, 500);
+
+        $('.main_container [class*=spnr_container]').stop().fadeOut(150);
+        setTimeout(function () {
+            load_spinners();
+        },150)
     }
 
     function load_spinners(e) {
@@ -93,14 +94,13 @@ $('document').ready(function () {
         }
 
         if ($(e.target).is('.fa-angle-left')) {
-            $('.main_container [class*=spnr_container]').stop().fadeOut(150).promise().done(
-                function () {
-                    n = nsel;
-                    n -= nc;
-                    if (n < 0) {n = 0}
-                    load_spinners_w_fadeout();
-                }
-            );
+            $('.main_container [class*=spnr_container]').stop().fadeOut(150);
+            setTimeout(function () {
+                n = nsel;
+                n -= nc;
+                if (n < 0) {n = 0}
+                load_spinners_w_fadeout();
+            },150)
 
         } else {
             load_spinners_w_fadeout();
@@ -113,6 +113,10 @@ $('document').ready(function () {
 
 
     $('.header .header_button').click(function (e) {
+
+        if (isAnimating === true) {
+            return
+        }
 
         if ($(e.target).is('#multi')) {
             $(this).attr('id', 'single');
