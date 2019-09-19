@@ -26,6 +26,7 @@ $('document').ready(function () {
     let c1c =0;
     let clock_rotation = 0;
     let oe = 0;
+    let isAnimating = false;
 
 
 
@@ -58,7 +59,11 @@ $('document').ready(function () {
     function load_spinners_w_fadeout() {
         $('.main_container [class*=spnr_container]').stop().fadeOut(150).promise().done(
             function () {
-                load_spinners()
+                isAnimating = true;
+                setTimeout(function () {
+                    isAnimating = false;
+                }, 500);
+                load_spinners();
             });
     }
 
@@ -81,7 +86,11 @@ $('document').ready(function () {
 
     }
 
-    $('.left_nav_container, .right_nav_container').click(function (e) {
+    $('.left_nav_container, .right_nav_container').stop().click(function (e) {
+
+        if (isAnimating === true) {
+            return
+        }
 
         if ($(e.target).is('.fa-angle-left')) {
             $('.main_container [class*=spnr_container]').stop().fadeOut(150).promise().done(
