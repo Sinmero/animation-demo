@@ -85,6 +85,8 @@ $('document').ready(function () {
             } else {nsel = n}
         }
 
+        // promise().done()
+
     }
 
     $('.left_nav_container, .right_nav_container').stop().click(function (e) {
