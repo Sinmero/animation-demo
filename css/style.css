@@ -81,30 +81,31 @@ body, html {
   height: 100%; }
 
 .spinner_Container .spinner_sm {
+  transform-origin: 50% 50%;
   -webkit-animation: multispinner 2s linear infinite;
   -o-animation: multispinner 2s linear infinite;
   animation: multispinner 2s linear infinite; }
 
 .spinner_Container .spinner_md {
+  transform-origin: 50% 50%;
   -webkit-animation: multispinner 2.5s linear infinite reverse;
   -o-animation: multispinner 2.5s linear infinite reverse;
   animation: multispinner 2.5s linear infinite reverse; }
 
 .spinner_Container .spinner_lg {
+  transform-origin: 50% 50%;
   -webkit-animation: multispinner 3s linear infinite;
   -o-animation: multispinner 3s linear infinite;
   animation: multispinner 3s linear infinite; }
 
 @keyframes multispinner {
   0% {
-    transform-origin: 50% 50%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    transform-origin: 50% 50%;
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -630,6 +631,28 @@ body, html {
     -o-animation: multispinner 3s linear reverse infinite;
     animation: multispinner 3s linear reverse infinite; }
 
+/*=============== Spinner 14 ===============*/
+.single_dot_spinner_border {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 100%;
+  -webkit-box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.2);
+  justify-content: center; }
+  .single_dot_spinner_border .single_dot_spinner {
+    position: absolute;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: white;
+    transform-origin: 50% 75px;
+    -webkit-animation: multispinner 2s linear infinite;
+    -o-animation: multispinner 2s linear infinite;
+    animation: multispinner 2s linear infinite; }
+
 @media only screen and (max-width: 1200px) {
   [class*='spnr_container'] {
     margin: 20% 15% 20% 15%;
@@ -654,11 +677,6 @@ body, html {
     width: 20px;
     height: 20px; }
 
-  .clock_container_1 .dot_1 {
-    transform-origin: 50% 50px; }
-
-  .clock_container_2 .dot_2 {
-    transform-origin: 50% 50px; }
-
-  .circle_dot_container .circle_dot_outside {
+  .clock_container_1 .dot_1, .clock_container_2 .dot_2,
+  .circle_dot_container .circle_dot_outside, .single_dot_spinner_border .single_dot_spinner {
     transform-origin: 50% 50px; } }
