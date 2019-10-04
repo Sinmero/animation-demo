@@ -367,10 +367,10 @@ $('document').ready(function () {
     let bracket_rotation = 0;
     let chr_counter = 0;
 
-
-    let animationspinner_interval = setInterval(function () {
+    function textAnimation () {
 
         bracket_rotation += 360;
+        console.log('animation started');
 
         $('.loading_container .string_container').rotate(bracket_rotation);
 
@@ -398,7 +398,14 @@ $('document').ready(function () {
                 },60);
             }, 2500);
         }, 1200);
-    }, 6000);
+    }
+
+    textAnimation();
+
+    let animationspinner_interval = setInterval(function () {
+        textAnimation();
+        }, 6000);
+
 
 
 
