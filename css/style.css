@@ -653,6 +653,30 @@ body, html {
     -o-animation: multispinner 2s linear infinite;
     animation: multispinner 2s linear infinite; }
 
+/*=============== Spinner 15 ===============*/
+.spnr_container_15 .loading_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .spnr_container_15 .loading_container span {
+    display: inline-flex;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    font-family: "Courier New", sans-serif; }
+  .spnr_container_15 .loading_container .string_container {
+    display: inline-flex;
+    -webkit-transition: all 1.0s ease-in;
+    -moz-transition: all 1.0s ease-in;
+    -ms-transition: all 1.0s ease-in;
+    -o-transition: all 1.0s ease-in;
+    transition: all 1.0s ease-in;
+    justify-content: center; }
+    .spnr_container_15 .loading_container .string_container .loading_chr {
+      display: none; }
+
 @media only screen and (max-width: 1200px) {
   [class*='spnr_container'] {
     margin: 20% 15% 20% 15%;
@@ -679,4 +703,7 @@ body, html {
 
   .clock_container_1 .dot_1, .clock_container_2 .dot_2,
   .circle_dot_container .circle_dot_outside, .single_dot_spinner_border .single_dot_spinner {
-    transform-origin: 50% 50px; } }
+    transform-origin: 50% 50px; }
+
+  .loading_container span {
+    font-size: 0.8rem !important; } }

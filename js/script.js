@@ -362,6 +362,44 @@ $('document').ready(function () {
 
     let circle_dot_spinner_animation = setInterval (c_anim, 2200);
 
+    // ======================animation spinner======================
+
+    let bracket_rotation = 0;
+    let chr_counter = 0;
+
+
+    let animationspinner_interval = setInterval(function () {
+
+        bracket_rotation += 360;
+
+        $('.loading_container .string_container').rotate(bracket_rotation);
+
+        setTimeout(function () {
+
+            let chrFadein_Interval = setInterval(function () {
+
+                $('.loading_container .loading_chr').eq(chr_counter).fadeIn(100);
+                chr_counter++;
+                if (chr_counter === 11) {
+                    chr_counter = 0;
+                    clearInterval(chrFadein_Interval)
+                }
+            },100);
+
+            setTimeout(function () {
+                chr_counter = 10;
+                let chrFadeout_Interval = setInterval(function () {
+                    $('.loading_container .loading_chr').eq(chr_counter).fadeOut(60);
+                    chr_counter--;
+                    if (chr_counter === -1) {
+                        chr_counter = 0;
+                        clearInterval(chrFadeout_Interval)
+                    }
+                },60);
+            }, 2500);
+        }, 1200);
+    }, 6000);
+
 
 
 });
